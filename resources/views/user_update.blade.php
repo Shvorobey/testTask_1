@@ -8,7 +8,6 @@
                         <form action="" method="post" enctype="multipart/form-data">
                             @csrf
                             <strong> Пользователь:</strong> <br>
-
                             <hr>
                             <strong>Имя:</strong> <br>
                             <input type="text" name="name"
@@ -35,8 +34,6 @@
                                     </ul>
                                 </div>
                             @endif
-
-
                             <input type="submit" value="Сохранить"/>
                         </form>
                     </div>
