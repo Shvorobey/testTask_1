@@ -20,22 +20,20 @@ class formActionController extends Controller
             $this->validate($request, [
                 'name' => 'required | max: 30 | string | ',
                 'email' => 'required | email | string | unique:users,email',
-
             ]);
-
             $user = User::find(Auth::id(), 'id');
             $user->name = $request->input('name');
             $user->email = $request->input('email');
             try {
                 $user->save();
             } catch (\Exception $exception) {
+                dd($user);
                 return Redirect::back()->withErrors([
                     'errors' => $exception->getMessage()]);
             }
         } else {
             $user = User::find(Auth::id(), 'id');
         }
-
         return view('user_update', ['user' => $user]);
     }
 }

@@ -8,7 +8,7 @@ Auth::routes();
 
 Route::get('/login', 'HomeController@index')->name('login');
 
-Route::get ('/home', function () {
+Route::get('/home', function () {
     Auth::logout();
     return view('auth.login');
 })->name('home');

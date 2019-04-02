@@ -14,7 +14,6 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-
                         Вы вошли под именем <strong>{{Auth::user ()->name}}</strong>
                     </div>
                 </div>
